@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Enemy.Data;
 using Helper;
+using Level;
 using Path;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -96,12 +97,13 @@ namespace Enemy
             {
                 _animator.SetTrigger("Hit");
                 healthBar.gameObject.SetActive(true);
-                healthBar.transform.position = new Vector3(_currentHealth / enemyData.health, 1f, 1f);
+                healthBar.transform.localScale = new Vector3(_currentHealth / enemyData.health, 1f, 1f);
             }
         }
 
         private void Die()
         {
+            MenuController.Instance.IncPoint(enemyData.point);
             Destroy(gameObject);
         }
 

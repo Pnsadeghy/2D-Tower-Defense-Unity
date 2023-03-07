@@ -86,6 +86,7 @@ namespace Tower
         public Sprite PreviewSprite() => towerData.preview;
 
         public float PointRequired() => towerData.point;
+        public TowerData Data() => towerData;
 
         #endregion
 

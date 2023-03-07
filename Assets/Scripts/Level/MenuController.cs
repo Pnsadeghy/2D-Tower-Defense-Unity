@@ -56,10 +56,16 @@ namespace Level
 
             var levelController = GetComponent<LevelController>();
             
-            SetTowerButtons(levelController.TowersList());
+            SetTowerButtons(new List<TowerController>(levelController.TowersList()));
             
             _currentPoint = levelController.FirstPoint();
             SetPointText();
+        }
+
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(1))
+                _selectedTower = null;
         }
 
         #endregion
@@ -97,12 +103,27 @@ namespace Level
             _selectedTower = tower;
         }
 
+        public void IncPoint(float point)
+        {
+            _currentPoint += point;
+            SetPointText();
+        }
+
+        public void DecPoint(float point)
+        {
+            _currentPoint -= point;
+            if (_currentPoint < point)
+                _selectedTower = null;
+            SetPointText();
+        }
+
         #endregion
 
         #region Get
 
         public float CurrentPoint() => _currentPoint;
         public TowerController SelectedTower() => _selectedTower;
+        public Transform TowerContainer() => _towersContainer;
 
         #endregion
 

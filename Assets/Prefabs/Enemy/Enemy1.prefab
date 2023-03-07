@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 1c24e1534b63f314298cfe5eba00bc5f, type: 2}
   sprite: {fileID: 4380909305277057888}
-  healthBar: {fileID: 1435852850727720649}
+  healthBar: {fileID: 4377248210518555820}
 --- !u!95 &7513037529743143697
 Animator:
   serializedVersion: 5
