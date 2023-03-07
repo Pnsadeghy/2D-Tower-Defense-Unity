@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70ed782c0b7a16c4bb1afb7b7ff0c9c5, type: 3}
-  m_Name: Tower1Data
+  m_Name: Tower2Data
   m_EditorClassIdentifier: 
-  timeout: 1
+  timeout: 3
   bullet: {fileID: 0}
-  landSize: 1
-  range: 2
-  point: 10
-  preview: {fileID: 21300000, guid: d8f9b521cdd55274084fa23ab0f807e2, type: 3}
+  landSize: 2
+  range: 4
+  point: 30
+  preview: {fileID: 21300000, guid: b03d1a97372629949ae4d886d4ea5704, type: 3}
