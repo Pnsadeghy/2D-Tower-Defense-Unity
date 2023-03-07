@@ -18,6 +18,9 @@ namespace Enemy
         
         [SerializeField]
         private Transform sprite;
+        
+        [SerializeField]
+        private Transform healthBar;
 
         #endregion
 
