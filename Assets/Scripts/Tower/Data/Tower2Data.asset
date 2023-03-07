@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower2Data
   m_EditorClassIdentifier: 
   timeout: 3
-  bullet: {fileID: 0}
+  bullet: {fileID: 1795347894110120399, guid: f98fe9b2b034d45459f4ca1606de38c0, type: 3}
   landSize: 2
   range: 4
   point: 30
