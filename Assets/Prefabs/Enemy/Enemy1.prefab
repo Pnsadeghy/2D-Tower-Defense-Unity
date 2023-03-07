@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4380909304043234938}
   - component: {fileID: 4380909304043234939}
+  - component: {fileID: 7513037529743143697}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -115,7 +116,7 @@ Transform:
   m_Children:
   - {fileID: 4380909305277057888}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4380909304043234939
 MonoBehaviour:
@@ -131,7 +132,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 1c24e1534b63f314298cfe5eba00bc5f, type: 2}
   sprite: {fileID: 4380909305277057888}
-  targetPoint: {fileID: 0}
+--- !u!95 &7513037529743143697
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4380909304043234937}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51e8997a3001ae041ac740af51eb9959, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &4380909305277057903
 GameObject:
   m_ObjectHideFlags: 0
