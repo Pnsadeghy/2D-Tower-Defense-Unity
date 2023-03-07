@@ -2664,7 +2664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuPanel: {fileID: 1719419914}
   MenuButtonsPanel: {fileID: 1845943933}
-  MenuPointText: {fileID: 0}
+  MenuPointText: {fileID: 1909064443}
   towerButton: {fileID: 8629472887270992487, guid: 42c08204a0113b848afcad88c87f17ac, type: 3}
 --- !u!1 &204535855
 GameObject:
