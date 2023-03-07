@@ -16,3 +16,7 @@ MonoBehaviour:
   point: 5
   speed: 5
   damage: 5
+  baseRange: 2
+  baseLayer:
+    serializedVersion: 2
+    m_Bits: 256
