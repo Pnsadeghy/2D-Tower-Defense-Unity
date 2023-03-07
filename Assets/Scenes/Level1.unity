@@ -3567,6 +3567,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerData: {fileID: 11400000, guid: 9ad0e1ca5ca55534ca05e02d830b9ade, type: 2}
   container: {fileID: 499400398}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1312786383
 GameObject:
   m_ObjectHideFlags: 0
