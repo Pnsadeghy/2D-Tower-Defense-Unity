@@ -12,5 +12,8 @@ namespace Enemy.Data
 
         public float speed;
         public float damage;
+
+        public float baseRange;
+        public LayerMask baseLayer;
     }
 }

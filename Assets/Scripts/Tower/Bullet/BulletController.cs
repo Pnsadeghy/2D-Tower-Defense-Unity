@@ -72,7 +72,7 @@ namespace Tower.Bullet {
             var enemies = Physics2D.OverlapCircleAll(transform.position, bulletData.damageRange, bulletData.enemyMask);
             foreach (var enemy in enemies)
             {
-                enemy.GetComponentInParent<EnemyController>().Damage(bulletData.damage);
+                enemy.GetComponentInParent<EnemyController>().Hit(bulletData.damage, transform.position);
             }
             Die();
         }
