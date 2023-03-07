@@ -5,6 +5,7 @@ using Enemy.Data;
 using Helper;
 using Path;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Enemy
 {
@@ -18,14 +19,14 @@ namespace Enemy
         [SerializeField]
         private Transform sprite;
 
-        public Transform targetPoint;
-
         #endregion
 
         #region Variables
         
         private Quaternion _lookAt;
         private float _currentHealth;
+
+        private Transform _targetPoint;
 
         #endregion
 
@@ -48,27 +49,31 @@ namespace Enemy
         private void SetPosition()
         {
             // leave if there is no target point
-            if (targetPoint == null) return;
+            if (_targetPoint == null) return;
             
             // get current position
             var currentPos = transform.position;
             
             // if item reached the target position, get next point
-            if (currentPos.Equals(targetPoint.position))
+            if (currentPos.Equals(_targetPoint.position))
             {
-                targetPoint = targetPoint.GetComponent<PointController>().GetNextPoint();
-                if (targetPoint == null) return;
-                _lookAt = ValueHelper.LookAt2D(currentPos, targetPoint.position);
+                _targetPoint = _targetPoint.GetComponent<PointController>().GetNextPoint();
+                if (_targetPoint == null) return;
+                _lookAt = ValueHelper.LookAt2D(currentPos, _targetPoint.position);
             }
 
             // smoothly rotate sprite
             sprite.rotation = Quaternion.Slerp(sprite.rotation, _lookAt, 0.1f);
             
             // move to target
-            transform.position = Vector3.MoveTowards(currentPos, targetPoint.position, enemyData.speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(currentPos, _targetPoint.position, enemyData.speed * Time.deltaTime);
+        }
+
+        public void SetTargetPoint(Transform targetPoint)
+        {
+            _targetPoint = targetPoint;
         }
 
         #endregion
     }
-
 }
