@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyData : MonoBehaviour
+namespace Enemy.Data
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "newEnemyData", menuName = "Data/Enemy Data/Basic Data")]
+    public class EnemyData : ScriptableObject
     {
-        
-    }
+        public float health;
+        public float point;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public float speed;
+        public float damage;
     }
 }

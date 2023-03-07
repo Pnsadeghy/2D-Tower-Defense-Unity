@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Enemy.Data;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+namespace Enemy
 {
-    // Start is called before the first frame update
-    void Start()
+    public class EnemyController : MonoBehaviour
     {
-        
+        #region Properties
+
+        [SerializeField]
+        private EnemyData enemyData;
+
+        #endregion
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
