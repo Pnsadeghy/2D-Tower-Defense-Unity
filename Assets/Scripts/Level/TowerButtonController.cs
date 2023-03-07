@@ -1,11 +1,20 @@
+using System;
 using Tower;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 namespace Level
 {
     public class TowerButtonController : MonoBehaviour
     {
+        #region Properties
+        
+        [SerializeField]
+        private Image sprite;
+
+        #endregion
+        
         #region Variables
 
         private float _point;
@@ -14,9 +23,8 @@ namespace Level
         #endregion
 
         #region Components
-
+        
         private Button _button;
-        private Image _sprite;
 
         #endregion
 
@@ -25,14 +33,20 @@ namespace Level
         private void Awake()
         {
             TryGetComponent(out _button);
-            _sprite = transform.GetChild(0).GetComponent<Image>();
         }
 
         private void Update()
         {
             var currentPoint = MenuController.Instance.CurrentPoint();
-            _button.SetEnabled(currentPoint >= _point);
-            _sprite.tintColor = currentPoint >= _point ? Color.white : Color.gray;
+            var isFocused = _tower.Equals(MenuController.Instance.SelectedTower());
+            var isEnabled = currentPoint >= _point;
+            _button.interactable = isEnabled;
+            sprite.color = isEnabled ? (isFocused ? Color.yellow : Color.white) : Color.gray;
+        }
+
+        public void OnClick()
+        {
+            MenuController.Instance.SetSelectedTower(_tower);
         }
 
         #endregion

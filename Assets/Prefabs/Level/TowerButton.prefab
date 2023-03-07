@@ -122,7 +122,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8629472887270992484}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 917158410258350103}
+        m_TargetAssemblyTypeName: Level.TowerButtonController, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &917158410258350103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7206fbb23020ae64fb66de994a50dc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 8629472888189685935}
 --- !u!1 &8629472888189685929
 GameObject:
   m_ObjectHideFlags: 0
