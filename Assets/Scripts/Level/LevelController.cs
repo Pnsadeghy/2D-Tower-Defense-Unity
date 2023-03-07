@@ -95,9 +95,9 @@ namespace Level
 
         #region Get
 
-        public List<TowerController> towers() => levelData.towers;
+        public List<TowerController> TowersList() => levelData.towers;
 
-        public float firstPoint() => levelData.firstPoint;
+        public float FirstPoint() => levelData.firstPoint;
 
         #endregion
 

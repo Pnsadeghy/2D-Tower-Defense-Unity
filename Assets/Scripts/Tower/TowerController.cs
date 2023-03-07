@@ -83,10 +83,9 @@ namespace Tower
 
         #region Get
 
-        public Sprite GetSprite()
-        {
-            return towerData.preview;
-        }
+        public Sprite PreviewSprite() => towerData.preview;
+
+        public float PointRequired() => towerData.point;
 
         #endregion
 

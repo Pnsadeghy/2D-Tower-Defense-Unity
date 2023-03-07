@@ -9,6 +9,17 @@ namespace Level
 {
     public class MenuController : MonoBehaviour
     {
+        #region Init
+
+        public static MenuController Instance;
+
+        public MenuController()
+        {
+            Instance = this;
+        }
+
+        #endregion
+        
         #region Properties
 
         [SerializeField]
@@ -41,7 +52,7 @@ namespace Level
 
             var levelController = GetComponent<LevelController>();
             
-            var towers = levelController.towers();
+            var towers = levelController.TowersList();
             
             MenuButtonsPanel.sizeDelta = new Vector2(MenuButtonsPanel.sizeDelta.x, towers.Count * 90);
             MenuButtonsPanel.anchoredPosition = new Vector2(0, MenuButtonsPanel.sizeDelta.y / 2);
@@ -52,18 +63,24 @@ namespace Level
             foreach (var tower in towers)
             {
                 var button = Instantiate(towerButton, MenuButtonsPanel);
-                var buttonRect = button.GetComponent<RectTransform>();
+                var buttonRect = button.transform.GetComponent<RectTransform>();
                 
                 buttonRect.anchoredPosition = new Vector2(0, pos + 50);
                 pos += 90;
                 
-                button.transform.GetChild(0).GetComponent<Image>().sprite = tower.GetSprite();
+                button.transform.GetChild(0).GetComponent<Image>().sprite = tower.PreviewSprite();
                 button.GetComponent<TowerButtonController>().SetTower(tower);
             }
 
-            _currentPoint = levelController.firstPoint();
+            _currentPoint = levelController.FirstPoint();
             MenuPointText.text = "$ " + _currentPoint;
         }
+
+        #endregion
+
+        #region Get
+
+        public float CurrentPoint() => _currentPoint;
 
         #endregion
     }
