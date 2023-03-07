@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Helper;
+using Tower.Bullet;
 using Tower.Data;
 using UnityEngine;
 
@@ -20,6 +21,9 @@ namespace Tower
         [SerializeField]
         private LayerMask enemyMask;
 
+        [SerializeField]
+        private Transform bulletPoint;
+
         #endregion
 
         #region Variables
@@ -30,7 +34,18 @@ namespace Tower
 
         #endregion
 
+        #region Components
+
+        private Animator _animator;
+
+        #endregion
+
         #region Events
+
+        private void Start()
+        {
+            TryGetComponent(out _animator);
+        }
 
         private void Update()
         {
@@ -54,8 +69,14 @@ namespace Tower
         private void Shoot()
         {
             _lastShot = Time.time;
-            // #TODO animation
-            // #TODO create bullet
+            
+            _animator.SetTrigger("Shoot");
+        }
+
+        public void CreateBullet()
+        {
+            var bullet = Instantiate(towerData.bullet, bulletPoint.position, container.rotation);
+            bullet.GetComponent<BulletController>().SetTarget(_enemy);
         }
 
         #endregion

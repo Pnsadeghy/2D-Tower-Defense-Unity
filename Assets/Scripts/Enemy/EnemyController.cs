@@ -33,11 +33,19 @@ namespace Enemy
 
         #endregion
 
+        #region Components
+
+        private Animator _animator;
+
+        #endregion
+
         #region Events
 
         private void Start()
         {
             _currentHealth = enemyData.health;
+
+            TryGetComponent(out _animator);
         }
 
         private void Update()
@@ -75,6 +83,26 @@ namespace Enemy
         public void SetTargetPoint(Transform targetPoint)
         {
             _targetPoint = targetPoint;
+        }
+
+        public void Damage(float damage)
+        {
+            _currentHealth -= damage;
+            if (_currentHealth < 0)
+            {
+                Die();
+            }
+            else
+            {
+                _animator.SetTrigger("Hit");
+                healthBar.gameObject.SetActive(true);
+                healthBar.transform.position = new Vector3(_currentHealth / enemyData.health, 1f, 1f);
+            }
+        }
+
+        private void Die()
+        {
+            Destroy(gameObject);
         }
 
         #endregion
