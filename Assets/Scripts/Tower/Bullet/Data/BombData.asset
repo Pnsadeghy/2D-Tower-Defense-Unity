@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BombData
   m_EditorClassIdentifier: 
   damage: 15
-  speed: 2
+  speed: 5
   detectRange: 0.2
   damageRange: 0.5
   enemyMask:

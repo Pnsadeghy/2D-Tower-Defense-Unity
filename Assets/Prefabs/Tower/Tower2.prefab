@@ -152,6 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6514766640842238978}
   - component: {fileID: 6514766640842238977}
+  - component: {fileID: 2030728698086317742}
   m_Layer: 0
   m_Name: Tower2
   m_TagString: Tower
@@ -194,6 +195,26 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   bulletPoint: {fileID: 4410811667690314439}
+--- !u!95 &2030728698086317742
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6514766640842238979}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2af0d06646e4dc8438318d531000fbaa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &6514766641118685241
 GameObject:
   m_ObjectHideFlags: 0
