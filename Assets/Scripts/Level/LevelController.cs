@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Enemy;
 using Level.Data;
+using Tower;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -21,7 +22,6 @@ namespace Level
         #region Variables
 
         private Transform _enemiesContainer;
-        private Transform _towersContainer;
 
         private Queue<EnemyController> _enemiesQueue;
 
@@ -37,10 +37,9 @@ namespace Level
 
         #region Events
 
-        private void Start()
+        private void Awake()
         {
             _enemiesContainer = transform.GetChild(0);
-            _towersContainer = transform.GetChild(1);
 
             ActiveWave(0);
         }
@@ -91,6 +90,14 @@ namespace Level
                 _enemiesQueue.Enqueue(enemy);
             }
         }
+
+        #endregion
+
+        #region Get
+
+        public List<TowerController> TowersList() => levelData.towers;
+
+        public float FirstPoint() => levelData.firstPoint;
 
         #endregion
 

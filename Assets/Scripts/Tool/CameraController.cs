@@ -6,6 +6,17 @@ namespace Tool
 {
     public class CameraController : MonoBehaviour
     {
+        #region Init
+
+        public static CameraController Instance;
+
+        public CameraController()
+        {
+            Instance = this;
+        }
+
+        #endregion
+        
         #region Properties
 
         [SerializeField] 
@@ -30,7 +41,7 @@ namespace Tool
 
         #region Events
 
-        private void Start()
+        private void Awake()
         {
             TryGetComponent(out _camera);
             
@@ -132,11 +143,7 @@ namespace Tool
 
         #region Helper
 
-        public Vector3 MousePosition()
-        {
-            // Get mouse current position in Game world
-            return _camera.ScreenToWorldPoint(Input.mousePosition);
-        }
+        public Vector3 MousePosition() => _camera.ScreenToWorldPoint(Input.mousePosition);
 
         #endregion
     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f66c0b1e7b5d0949b77a3361c16c2d3, type: 3}
   m_Name: BombData
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 60
   speed: 5
   detectRange: 0.2
   damageRange: 0.5
