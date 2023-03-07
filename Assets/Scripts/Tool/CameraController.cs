@@ -57,6 +57,14 @@ namespace Tool
         private void SetTargetPosition(Vector3 position)
         {
             // Check camera limitation movements
+            var cameraHeight = _camera.orthographicSize / 2;
+            var cameraWidth = (_camera.orthographicSize * _camera.aspect) / 2;
+
+            position.x = Mathf.Max(cameraData.dragMin.x + cameraWidth,
+                Mathf.Min(cameraData.dragMax.x - cameraWidth, position.x));
+            
+            position.y = Mathf.Max(cameraData.dragMin.y + cameraHeight,
+                Mathf.Min(cameraData.dragMax.y - cameraHeight, position.y));
             
             // Set new target position
             _targetPosition = position;
@@ -94,10 +102,10 @@ namespace Tool
             // Calculate new zoom value base on scroll and zoom limitations
             if (zoomIn)
             {
-                _targetZoom = Mathf.Max(cameraData.minZoom, _targetZoom - 1);
+                _targetZoom = Mathf.Max(cameraData.zoomMin, _targetZoom - 1);
             } else
             {
-                _targetZoom = Mathf.Min(cameraData.maxZoom, _targetZoom + 1);
+                _targetZoom = Mathf.Min(cameraData.zoomMax, _targetZoom + 1);
             }
 
             // In ZoomIn, the camera will move to the mouse position

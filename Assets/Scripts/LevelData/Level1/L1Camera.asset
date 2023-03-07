@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: L1Camera
   m_EditorClassIdentifier: 
   zoomSpeed: 5
-  minZoom: 5
-  maxZoom: 10
+  zoomMin: 5
+  zoomMax: 10
   dragSpeed: 5
-  dragMin: {x: -26, y: -16}
-  dragMax: {x: 26, y: 20}
+  dragMin: {x: -17, y: -12}
+  dragMax: {x: 17, y: 15}

@@ -9,7 +9,7 @@ namespace Tool.Data
     {
         [Header("Zoom")]
         public float zoomSpeed;
-        public float minZoom, maxZoom;
+        public float zoomMin, zoomMax;
         
         [Header("Drag")]
         public float dragSpeed;
