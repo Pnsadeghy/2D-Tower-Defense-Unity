@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Level
+namespace Level.Element
 {
     public class TowerButtonController : MonoBehaviour
     {
