@@ -1,0 +1,12 @@
+DarkBG	#030504
+Dark #193f4a
+Meduim #2f8ca3
+White #fffffe
+
+Yellow #FFE64D
+Orange #f4af2d
+Red #DF740C
+Blue #6FC3DF
+
+https://www.color-hex.com/color-palette/1017335
+https://www.colourlovers.com/palette/1406402/Tron_Legacy_2
