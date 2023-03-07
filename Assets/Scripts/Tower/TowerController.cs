@@ -42,7 +42,7 @@ namespace Tower
 
         #region Events
 
-        private void Start()
+        private void Awake()
         {
             TryGetComponent(out _animator);
         }
@@ -77,6 +77,15 @@ namespace Tower
         {
             var bullet = Instantiate(towerData.bullet, bulletPoint.position, container.rotation);
             bullet.GetComponent<BulletController>().SetTarget(_enemy);
+        }
+
+        #endregion
+
+        #region Get
+
+        public Sprite GetSprite()
+        {
+            return towerData.preview;
         }
 
         #endregion

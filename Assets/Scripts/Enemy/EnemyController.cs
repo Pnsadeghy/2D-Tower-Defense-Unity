@@ -41,7 +41,7 @@ namespace Enemy
 
         #region Events
 
-        private void Start()
+        private void Awake()
         {
             _currentHealth = enemyData.health;
 

@@ -30,7 +30,7 @@ namespace Tool
 
         #region Events
 
-        private void Start()
+        private void Awake()
         {
             TryGetComponent(out _camera);
             
