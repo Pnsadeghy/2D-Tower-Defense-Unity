@@ -41,8 +41,7 @@ namespace Base
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            EnemyController enemy;
-            if (!col.TryGetComponent(out enemy)) return;
+            var enemy = col.GetComponentInParent<EnemyController>();
             _currentHealth -= enemy.DamageValue();
             enemy.Hit(1000f, transform.position);
 

@@ -228,7 +228,7 @@ Animator:
   m_GameObject: {fileID: 4380909304043234937}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51e8997a3001ae041ac740af51eb9959, type: 2}
+  m_Controller: {fileID: 9100000, guid: 618aca88cbe17054d9d3e71ac90aee16, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 6527631099107698868}
   m_Layer: 7
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
